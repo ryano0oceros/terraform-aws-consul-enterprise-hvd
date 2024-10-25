@@ -1,7 +1,5 @@
 # Example Scenario - Amazon Linux | Internal Network Load Balancer (NLB) | Primary Consul cluster
 
-
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
