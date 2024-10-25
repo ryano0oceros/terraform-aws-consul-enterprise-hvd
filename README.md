@@ -25,7 +25,7 @@ The `examples/amazonlinux-internal-nlb-consul-primary` folder contains the defau
 
 The `examples/amazonlinux-internal-nlb-development` folder uses public subnets and self-signed certificates for a **non-production environment** but illustrates how to enable all features of the root module.
 
-## Usage
+## Docs
 
 Additional documentation for customization and usage can be found in the [docs](./docs/) folder.
 
