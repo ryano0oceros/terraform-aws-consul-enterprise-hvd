@@ -1,4 +1,3 @@
-
 # Deployment customization
 
 ## TLS
@@ -21,7 +20,6 @@ To enable Consul Enterprise Redundancy Zones, set the `server_redundancy_zones` 
 
 - **server_redundancy_zones**: Set to `true` to enable Consul Enterprise Redundancy Zones. This requires an even number of server nodes spread across three availability zones.
 - **consul_nodes**: Set to `6` to ensure proper configuration for redundancy zones. This specifies the number of Consul nodes to deploy.
-
 
 ### Template customization
 

@@ -9,11 +9,11 @@ Consul Enterprise enables the capability of automatically upgrading a cluster of
 
 Review the [Consul operator autopilot](https://developer.hashicorp.com/consul/commands/operator/autopilot) documentation and complete the [Automated Upgrade](https://developer.hashicorp.com/consul/tutorials/datacenter-operations/autopilot-datacenter-operations#upgrade-migrations) tutorial to learn more about automated upgrades.
 
-### Module support
+### Module options
 
 The module supports specifying the `consul_install_version` and `consul_cluster_version`.
 
-```json
+```hcl
 variable "consul_install_version" {
   type        = string
   description = "Version of Consul to install, eg. '1.19.0+ent'"
@@ -32,8 +32,7 @@ The module includes a variable `autopilot_health_enabled` which defaults to true
 
 The `module.<name>.aws_autoscaling_group.consul` resource supports the deployment with automated upgrades.
 
-```json
-
+```hcl
 resource "aws_autoscaling_group" "consul" {
 ...
   # Don't grab latest template if re-launching failed instances
@@ -64,6 +63,6 @@ resource "aws_autoscaling_group" "consul" {
 }
 ```
 
-This means you should (where possible and to prevent data loss) follow the standard operating procedure and ensure a backup and recovery process is in place and used accordingly. See the tutorial on [backup and restore](https://developer.hashicorp.com/consul/tutorials/operate-consul/backup-and-restore ).
+This means you should (where possible and to prevent data loss) follow the standard operating procedure and ensure a backup and recovery process is in place and used accordingly. See the tutorial on [backup and restore](https://developer.hashicorp.com/consul/tutorials/operate-consul/backup-and-restore).
 
 Use the automated upgrade process. Once the upgrade is successful you can update the `var.consul_install_version` in your deployment and replace the `aws_launch_template` which will then mean any future server failures in the `aws_autoscaling_group.consul` resource will relaunch on the correct version.
